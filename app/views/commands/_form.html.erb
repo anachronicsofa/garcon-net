@@ -1,0 +1,42 @@
+<%= form_with(model: command, local: true) do |form| %>
+  <% if command.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(command.errors.count, "error") %> prohibited this command from being saved:</h2>
+
+      <ul>
+        <% command.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :payment_status %>
+    <%= form.text_field :payment_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_name %>
+    <%= form.text_field :client_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_cpf %>
+    <%= form.text_field :client_cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_email %>
+    <%= form.text_field :client_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

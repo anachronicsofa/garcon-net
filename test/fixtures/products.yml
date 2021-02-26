@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  available: false
+  price: 1.5
+  description: MyString
+  type: 
+  prompt_delivery: false
+  stock: 1
+  preparation_time: 2021-02-26 20:33:42
+
+two:
+  name: 
+  available: false
+  price: 1.5
+  description: MyString
+  type: 
+  prompt_delivery: false
+  stock: 1
+  preparation_time: 2021-02-26 20:33:42

@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+  timeout: 5000
+
+development:
+  <<: *default
+  database: garcon-net
+test:
+  <<: *default
+  database: garcon-net
+
+production:
+  <<: *default
+  database: garcon-net
