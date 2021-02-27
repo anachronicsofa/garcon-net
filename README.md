@@ -1,24 +1,68 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+## Fast Development
 
 * Ruby version
 
-* System dependencies
+```
+ 2.6.5
+```
 
-* Configuration
+* Setup
 
-* Database creation
+# Set Ruby Version
 
-* Database initialization
+```
+  rvm install 2.6.5
 
-* How to run the test suite
+  or
 
-* Services (job queues, cache servers, search engines, etc.)
+  rbenv install 2.6.5
+```
 
-* Deployment instructions
+### After Install Ruby Version
 
-* ...
+```
+  rvm 2.6.5
+  
+  or
+
+  rbenv local 2.6.5
+```
+
+# Run App
+
+## Dependencies
+
+```
+  gem install bundler:2.1.4
+  bundle install
+```
+
+## Database
+
+```
+  copy .env-sample file and rename with .env
+```
+
+```
+  set values of the environment variables
+```
+
+### Create and setup database
+
+```
+  rails db:create
+  
+  rails db:migrate
+
+  rails db:seed
+```
+
+## Start Serve
+
+```
+  rails s
+```
+
+
