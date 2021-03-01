@@ -1,0 +1,28 @@
+.header {
+  position: absolute;
+  width: 100%;
+  height: 68px;
+  background: #FFF;
+  box-shadow: 3px 4px rgba(150, 149, 149, 0.25);  
+
+    &.header--logo {
+    padding-left: 12%;
+    padding-top: 2.2%;
+    font-style: normal;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 15%;
+    color: #6C63FF;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+a {
+  color: #6C63FF;
+ }
+ 
+ a:hover{
+  text-decoration:none;
+  color:#6b63ffde;
+ }
