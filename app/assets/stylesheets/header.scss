@@ -8,13 +8,29 @@
 }
 
 .header--logo {
-    padding-left: 12%;
-    padding-top: 2.2%;
-    font-style: normal;
-    font-weight: bold;
-    justify-content: center;
-    font-size: 28px;
-    line-height: 15%;
-    color: #6C63FF;
-    font-family: "Poppins", sans-serif;
+  padding-left: 12%;
+  padding-top: 32px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 15%;
+  color: #6C63FF;
+  font-family: "Poppins", sans-serif;
+}
+
+.header--buttons {
+  position: absolute;
+  display: flex;
+  top: -2px;
+  right: 10%;
+  height: 70%;
+  width: 30%;
+} 
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-left: 14px;
 }
