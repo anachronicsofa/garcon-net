@@ -16,17 +16,22 @@ pre {
   font-size: 11px;
 }
 
+
 a {
-  color: #000;
-}
+  color: #6C63FF;
+ }
+ 
+ a:link {
+  text-decoration:none; 
+ }
+ 
+ a:hover{
+  text-decoration:none;
+  color:#6b63ffde;
+ }
 
 a:visited {
-  color: #666;
-}
-
-a:hover {
-  color: #fff;
-  background-color: #000;
+  color: #6C63FF;
 }
 
 th {
