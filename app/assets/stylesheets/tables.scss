@@ -1,0 +1,56 @@
+.table_container {
+  background-color: rgb(250, 252, 248);
+  width: 95%;
+  display: flex;
+  margin-left: 2%;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  justify-content: space-evenly;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  td, th {
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &.table__column--center {
+      text-align: center;
+    }
+    &.table__column--right {
+      text-align: right;
+    }
+    &.table__column--green {
+      text-align: right;
+      color: mediumaquamarine;
+    }
+    &.table__column--nowrap {
+      white-space: nowrap;
+    }
+    &.table__column--money-input {
+      width: 120px;
+
+      .input {
+        margin: 0;
+      }
+      input {
+        text-align: right;
+      }
+    }
+  }
+  td {
+    border-bottom: 1px solid #EEE;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-color: rgb(212, 206, 206);
+  }
+  th {
+    border-bottom: 4px solid rgb(211, 208, 208);
+  }
+}
