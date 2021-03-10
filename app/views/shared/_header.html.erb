@@ -1,5 +1,15 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
 <div class="header"> 
   <div class= "header--logo"> 
-    <a href="/tables" > Garçon.NET</a> 
+    <a href="/welcome" > Garçon.NET</a> 
   </div>
+
+  <% if request.env['PATH_INFO'] == '/welcome'%>
+    <ul class="header--buttons">
+      <li class="button__register"><b> Registre-se </b></li>
+      <li class="button__login"><b> Login </b></li>
+    </ul> 
+  <% end %>
 </div>
