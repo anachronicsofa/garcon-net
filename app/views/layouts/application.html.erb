@@ -6,9 +6,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body> y
     <%= yield %>
+    <%= render 'shared/header'%>
+    <%= render 'shared/footer' %>
   </body>
 </html>
+
+
