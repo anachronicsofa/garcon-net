@@ -154,6 +154,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -193,6 +196,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rest-client
   sass-rails
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
