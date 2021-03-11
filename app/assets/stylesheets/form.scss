@@ -1,0 +1,32 @@
+.form_container {
+  margin-left: 3%;
+}
+
+.text_input {
+  position: flex;
+  width: 50%;
+  height: 39px;
+  left: 82px;
+  top: 244px;
+  font-size: 14px;
+  padding: 10px 15px;
+  
+
+  background: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  position: relative;
+  border:2px;
+}
+
+.buttons {
+  display: inline-block;
+  width: 100%;
+}

@@ -1,8 +1,11 @@
-<%= simple_form_for @user do |f| %>
-  <%= f.input :name, input_html: { maxlength: 30 } %>
-  <%= f.input :password, input_html: { maxlength: 10 } %>
-  <%= f.input :email %>
-  <%=  f.check_box :admin, {}, true, false %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :name, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
+    <%= f.input :password, required: true, input_html: { class: 'text_input',  maxlength: 15 } %>
+    <%= f.input :email, required: true, input_html: { class: 'text_input' } %>
+    <%= f.input :admin, :label => '⠀Admin? (Permissão para criar/editar/apagar usuários, cardápios, etc.)', :value => false, input_html: { class: 'checkbox' } %>
+    <div class="buttons">
+      <%= f.button :submit, 'Criar Usuário', :class => "button_form"%>
+      <%= link_to 'Cancelar', users_path, :class => "button_back"%>
+    </div>
+  <% end %>
 

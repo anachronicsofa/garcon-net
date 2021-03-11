@@ -1,25 +1,6 @@
-.button { 
-  position: absolute;
-  top: 10px;
-  width: 184px;
-  height: 42px;
-  background-color: #8b998c; 
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  transition-duration: 0.4s;
-  cursor: pointer;
- }
- 
  .button__register {
-  height: 34px;
+  height: 29px;
   width: 170px;
-  padding: 2px;
   background-color: white; 
   color: #6C63FF; 
   border: 3px solid #6C63FF;
@@ -37,9 +18,8 @@
  }
  
 .button__login {
-  height: 34px;
+  height: 29px;
   width: 170px;
-  padding: 2px;
   background-color: #6C63FF; 
   color: white; 
   border: 3px solid #6C63FF;
@@ -55,4 +35,60 @@
   background-color: #4b45bd;
   color: white;
  }
+
+ .button_link {
+  position: flex;
+  width: 171px;
+  height: 45px;
+  background: #acacac;
+  border-radius: 15px;
+  font-size: 15px;
+  display: inline;
+ }
+
+ .button_link:hover {
+  background-color: #4b45bd;
+  color: white;
+ }
  
+ .button_form {
+  height: 40px;
+  width: 30%;
+  background-color: #6C63FF; 
+  color: white; 
+  border: 3px solid #6C63FF;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle; 
+  float: left;
+ }
+ 
+.button_form:hover {
+  background-color: #4b45bd;
+  color: white;
+ }
+
+ .button_back {
+  height: 40px;
+  width: 19%;
+  margin-left: 1%;
+  background-color: #EF8080; 
+  color: white; 
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle; 
+  float: left;
+ }
+ 
+.button_back:hover {
+  background-color: #ef8080b7;
+  color: white;
+ }
