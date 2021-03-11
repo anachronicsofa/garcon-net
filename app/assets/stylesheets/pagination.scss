@@ -1,0 +1,33 @@
+.pagination {
+  text-align: center;
+
+  a {
+    color: black;
+    text-decoration: none;
+    margin: 0 4px;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 6rem;
+  }
+
+  a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+
+  .first, .last {
+    display: none;
+  }
+
+  .current {
+    background-color: #6C63FF;
+    color: white;
+    margin: 0 5px;
+    padding: 4px 8px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}
+
+  
