@@ -1,0 +1,34 @@
+.icon.icon--right {
+  margin-right: 5px;
+}
+.icon.icon--left {
+  margin-left: 5px;
+}
+.icon--checkmark {
+  color: mediumseagreen;
+  font-size: 18px;
+}
+.icon--btn {
+  padding: 5px 0;
+  display: inline-block;
+  width: 35px;
+  text-align: center;
+  margin-right: 3px;
+  font-size: 18px;
+}
+.icon--edit {
+  background-color: #EEE;
+  color: #333;
+
+  &:hover {
+    background-color: #DDD;
+  }
+}
+.icon--delete {
+  background-color: lightcoral;
+  color: white;
+
+  &:hover {
+    background-color: darken(lightcoral, 5%);
+  }
+}

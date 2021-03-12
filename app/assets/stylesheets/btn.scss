@@ -3,9 +3,27 @@
     background-color: #ddd;
     color: #333;
     outline: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     &:hover {
       background-color: #ccc;
+    }
+  }
+
+  &.btn--delete {
+    background-color: #EF8080;
+    color: rgb(245, 243, 243);
+    outline: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 4px;
+    &:hover {
+      background-color: #ef8080bb;
     }
   }
 
