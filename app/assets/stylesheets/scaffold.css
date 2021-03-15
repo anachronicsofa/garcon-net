@@ -45,18 +45,23 @@ div.actions {
 }
 
 #notice {
-  color: green;
+  color: #6C63FF;
+  margin-bottom: 0;
+  margin-right: 5%;
+  text-align: right;
+  font-size: 2;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
+  padding: 5px;
+  background-color: rgb(245, 192, 192);
+  border-radius: 8px;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid rgb(247, 147, 147);
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
