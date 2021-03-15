@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :companies
 
   get 'welcome', to: 'landing#index', as: :welcome
+  get 'register', to: 'landing#register', as: :register
 end

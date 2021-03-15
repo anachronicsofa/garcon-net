@@ -5,6 +5,10 @@ class LandingController < ApplicationController
       render :layout => true
   end
 
+  def register 
+      render :layout => true
+  end
+
   private
 
   def set_locale
