@@ -53,7 +53,7 @@
  
  .button_form {
   height: 40px;
-  width: 30%;
+  width: 61%;
   background-color: #6C63FF; 
   color: white; 
   border: 3px solid #6C63FF;
@@ -65,6 +65,10 @@
   align-items: center;
   vertical-align: middle; 
   float: left;
+
+  &.big {
+    width: 100%;
+  }
  }
  
 .button_form:hover {
@@ -74,7 +78,7 @@
 
  .button_back {
   height: 40px;
-  width: 19%;
+  width: 38%;
   margin-left: 1%;
   background-color: #EF8080; 
   color: white; 
