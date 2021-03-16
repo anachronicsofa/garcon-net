@@ -9,12 +9,16 @@
   <% if request.env['PATH_INFO'] == '/welcome'%>
     <ul class="header__buttons">
       <li><a href="/register" class="button__register"><b> Registre-se </b></a></li>
-      <li class="button__login"><b> Login </b></li>
+      <li><a href="/users/sign_in" class="button__login"><b> Login </b></a></li>
     </ul> 
    <% elsif request.env['PATH_INFO'] == '/register'%>
     <ul class="header__buttons">
-      <li class="button__login right"><b> Login </b></li>
+      <li><a href="/users/sign_in" class="button__login right"><b> Login </b></a></li>
     </ul> 
+    <% elsif request.env['PATH_INFO'] == '/users/sign_in'%>
+      <ul class="header__buttons">
+        <li><a href="/register" class="button__register right"><b> Registre-se </b></a></li>
+      </ul> 
     <% else %>
       <div class= "header__menu"> 
         <nav>
@@ -38,7 +42,7 @@
               <img src="<%= image_url 'notification.svg' %>" alt="notification">
             </li>
             <li class="name-logout">
-              <small class="user-name"> Olá, <%= current_user.name %> </small>
+              <small class="user-name"> Olá, <%= current_user.nil? ? 'Pessoa' : current_user.name %> </small>
               <a class="logout" href="">Sair</a>
             </li> 
           </ul>           
