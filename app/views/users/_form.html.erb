@@ -1,6 +1,7 @@
   <%= simple_form_for @user do |f| %>
     <%= f.input :name, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
     <%= f.input :password, required: true, input_html: { class: 'text_input',  maxlength: 15 } %>
+    <%= f.input :password_confirmation, required: true, input_html: { class: 'text_input',  maxlength: 15 } %>
     <%= f.input :email, required: true, input_html: { class: 'text_input' } %>
     <%= f.input :admin, :label => '⠀Admin? (Permissão para criar/editar/apagar usuários, cardápios, etc.)', :value => false, input_html: { class: 'checkbox' } %>
     <div class="buttons">

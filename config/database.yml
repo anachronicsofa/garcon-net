@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: garcon-net
+  database: garcon-net_dev
 test:
   <<: *default
-  database: garcon-net
+  database: garcon-net_test
 
 production:
   <<: *default
-  database: garcon-net
+  database: garcon-net_prod

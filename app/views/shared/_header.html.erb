@@ -7,9 +7,39 @@
   </div>
 
   <% if request.env['PATH_INFO'] == '/welcome'%>
-    <ul class="header--buttons">
+    <ul class="header__buttons">
       <li><a href="/register" class="button__register"><b> Registre-se </b></a></li>
       <li class="button__login"><b> Login </b></li>
     </ul> 
+   <% elsif request.env['PATH_INFO'] == '/register'%>
+    <ul class="header__buttons">
+      <li class="button__login right"><b> Login </b></li>
+    </ul> 
+    <% else %>
+      <div class= "header__menu"> 
+        <nav>
+         
+          <ul>
+            <li><a href="/tables"> Mesas </a></li>
+            <li><a href="/commands"> Comandas </a></li>
+            <li><a href="/orders"> Pedidos </a></li>
+          </ul>
+
+          <ul class="admin">
+            <a href=""> Admin ⤵ </a>
+            
+            <ul class="buttons-admin"> 
+           
+                <li><a href="/users"> Usuários</a></li>
+                <li><a href="/menus"> Cardápio </a></li>
+                <li><a href="/dashboard"> Relatórios </a></li>
+             
+            </ul>
+
+          </ul>
+        </nav> 
+      </div>
   <% end %>
 </div>
+
+<script src="./assets/drop_menu.js"></script>

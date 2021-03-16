@@ -1,0 +1,73 @@
+.header__menu {
+  position: absolute;
+  display: flex;
+  top: -2px;
+  right: 4%;
+  height: 70%;
+  width: 75%;
+  font-size: 19px;
+} 
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+nav ul li>a {
+  padding-bottom: 14px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-decoration: none;
+}
+
+nav ul li>a:hover{
+  border-bottom: solid;
+}
+
+.admin a{
+  padding-bottom: 12px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-decoration: none;
+}
+
+ul.buttons-admin{
+  margin-top: 1.7rem;
+  display: none;
+  margin-top: 48px;
+  position: relative;
+  list-style-type: none;
+  flex-direction: column;
+  background-color: rgb(251, 250, 252);
+  padding: 8px;
+  min-width:6.5rem;
+}
+
+ul.buttons-admin li.enable{
+  box-sizing: inherit;
+  display: flex;
+  z-index: 99;
+  margin-top: 1vh;
+  flex-grow: 2;
+  margin-left: 0.25;
+  margin-right: 12px;
+  margin-bottom: 2px;
+}
+
+ul.buttons-admin li.enable:hover{
+  z-index: 2;
+  border-left:0.25rem solid #6C63FF;
+  background-color: #ddd8e7;;
+  animation: linear;
+  transition: all 0.5s ease;
+  opacity: 1;
+  clear: both;
+  width: 80%;
+}

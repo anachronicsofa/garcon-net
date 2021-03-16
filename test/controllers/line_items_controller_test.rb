@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class LineItemsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in users(:one)
     @line_item = line_items(:one)
   end
 
