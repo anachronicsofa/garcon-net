@@ -29,6 +29,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.right {
+    margin-left: 51%;
+  }
  }
  
 .button__login:hover {
