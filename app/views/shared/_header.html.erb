@@ -18,12 +18,28 @@
     <% else %>
       <div class= "header__menu"> 
         <nav>
+         
           <ul>
             <li><a href="/tables"> Mesas </a></li>
-            <li><a href="/users"> Usuários </a></li>
             <li><a href="/commands"> Comandas </a></li>
+            <li><a href="/orders"> Pedidos </a></li>
           </ul>
-        <nav> 
+
+          <ul class="admin">
+            <a href=""> Admin ⤵ </a>
+            
+            <ul class="buttons-admin"> 
+           
+                <li><a href="/users"> Usuários</a></li>
+                <li><a href="/menus"> Cardápio </a></li>
+                <li><a href="/dashboard"> Relatórios </a></li>
+             
+            </ul>
+
+          </ul>
+        </nav> 
       </div>
   <% end %>
 </div>
+
+<script src="./assets/drop_menu.js"></script>
