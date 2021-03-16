@@ -9,5 +9,5 @@ one:
 two:
   name: MyString
   password: MyString
-  email: MyString
+  email: MyString2
   admin: false

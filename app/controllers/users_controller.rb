@@ -1,26 +1,23 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 15)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @user = User.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User was successfully created." }
+        format.html { redirect_to users_url, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,7 +29,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, notice: "User was successfully updated." }
+        format.html { redirect_to users_url, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -44,17 +41,18 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.require(:user).permit(:name, :password, :email, :admin)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation, :email, :admin)
+  end
 end

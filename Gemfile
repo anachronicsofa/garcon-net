@@ -13,13 +13,18 @@ gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'redis', '~> 4.0'
 gem 'rest-client'
+gem 'rubocop'
+gem 'rubocop-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.1.0'
-gem 'rubocop'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+end
+
+group :test do
+  gem 'database_cleaner-active_record'
 end
 
 group :development do

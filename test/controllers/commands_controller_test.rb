@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class CommandsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in users(:one)
     @command = commands(:one)
   end
 
