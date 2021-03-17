@@ -13,3 +13,10 @@ User.create! (
   password: 'garcon123',
   admin: true
 )
+
+20.times do
+  Table.create!(
+    name: Faker::Games::LeagueOfLegends.champion,
+    admin: %w[available reserved blocked].sample
+  )
+end

@@ -26,6 +26,15 @@
     </tbody>
   </table>
   <br>
+
+      <ul> 
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Procure uma mesa:">
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"> ☌    </i>
+          </button>
+        </div>
+    </ul>
 </div>
 
 <%= will_paginate @tables, :previous_label => '  ⇦', :next_label => ' ⇨', input_html: {class: 'pagination'} %>
