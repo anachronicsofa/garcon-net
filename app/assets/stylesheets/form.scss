@@ -46,4 +46,27 @@
 .buttons {
   display: inline-block;
   width: 100%;
+  margin-top: 10px;
+}
+
+select {
+  border-radius: 8px;
+  position: flex;
+  width: 61%;
+  height: 39px;
+  font-size: 17px;
+  background-color: white;
+  border-color: #DEDEDE;
+  justify-content: center;
+  text-align: center;
+  text-align-last: center;
+  transition: color 0s 2147483647s;
+}
+
+select:hover {
+  border-color: #6C63FF; /* cor da borda do select ao passar o mouse */
+}
+
+select option {
+  background-color: white;
 }

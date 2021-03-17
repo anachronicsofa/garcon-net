@@ -3,7 +3,7 @@ class TablesController < ApplicationController
 
   # GET /tables or /tables.json
   def index
-    @tables = Table.all
+    @tables = Table.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /tables/1 or /tables/1.json
