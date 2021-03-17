@@ -1,32 +1,19 @@
 
 <h1 class="page-title"> Mesas </h1>
 <h3 id="notice"><%= notice %></h3>
-  <div class="btn_container">
-    <%= link_to 'Criar Mesa', new_table_path, class: "btn btn--link" %>
-  </div>
 
 <div class="table_container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Reference</th>
-        <th>Status</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+  <div class="grid-container">
       <% @tables.each do |table| %>
-        <tr>
-          <td><%= table.reference %></td>
-          <td><%= table.status %></td>
-          <td><%= link_to '✎', edit_table_path(table), class: 'btn btn--discrete' %>
-          <%= link_to '✘', table, method: :destroy, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <% if table.status == 'available' %>  
+          <div class="grid-item green"><%= link_to table.reference, table_path(table) %></div>
+        <% elsif table.status == 'reserved' %>
+          <div class="grid-item yellow"><%= link_to table.reference, table_path(table) %></div>
+        <% else %>
+          <div class="grid-item"><%= link_to table.reference, table_path(table) %></div>
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
-  <br>
+  </div>
 </div>
 
 <%= will_paginate @tables, :previous_label => '  ⇦', :next_label => ' ⇨', input_html: {class: 'pagination'} %>

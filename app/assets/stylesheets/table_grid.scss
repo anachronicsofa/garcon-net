@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: white;
+  padding: 10px;
+}
+
+  .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  
+  a {
+    color: white;
+  }
+  &.green {
+    background-color: #9BD09A;
+  }
+  &.yellow {
+    background-color: #EEC190;
+  }
+}
