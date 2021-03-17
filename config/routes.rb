@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get 'welcome', to: 'landing#index', as: :welcome
   get 'register', to: 'landing#register', as: :register
+
+  namespace :admin do
+    resources :tables
+  end
 end
