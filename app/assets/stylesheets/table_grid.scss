@@ -24,3 +24,17 @@
     background-color: #EEC190;
   }
 }
+
+.status {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #C4C4C4;
+
+  &.green {
+    color: #9BD09A;
+  }
+  &.yellow {
+    color: #EEC190;
+  }
+}

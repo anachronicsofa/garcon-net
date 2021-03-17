@@ -14,6 +14,13 @@
         <% end %>
       <% end %>
   </div>
+  <div class="form_container">
+    <ul>
+      <li class="status green"> (•) Disponível </li>
+      <li class="status"> (•) Ocupada </li>
+      <li class="status yellow"> (•) Reservada </li>
+    </ul> 
+  </div>
 </div>
 
 <%= will_paginate @tables, :previous_label => '  ⇦', :next_label => ' ⇨', input_html: {class: 'pagination'} %>
