@@ -65,4 +65,10 @@
   rails s
 ```
 
+### After seeds, you can log with this admin account: 
+
+```
+  email: admin@garcon.com
+  senha: garcon123
+```
 
