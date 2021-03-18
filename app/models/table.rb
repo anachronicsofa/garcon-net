@@ -1,10 +1,9 @@
 class Table < ApplicationRecord
-  has_many :orders, class_name: 'Order'
+  has_many :orders
   validates :reference, :status, presence: true 
 
-  scope :ordered_by_ref, -> { order(reference: :asc) }
-  scope :available, -> { where(status: 'available') }
+  enum status: [:available, :reserved, :open]
 
-  STATUS = %w[available reserved blocked]
-    
+  scope :ordered_by_ref, -> { order(reference: :asc) }
+ 
 end

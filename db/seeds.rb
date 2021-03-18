@@ -1,4 +1,4 @@
-18.times do
+10.times do
   User.create!(
     name: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
     email: Faker::Internet.email,
@@ -7,16 +7,11 @@
   )
 end
 
-User.create! (
-  name: 'Admin',
-  email: 'admin@garcon.com',
-  password: 'garcon123',
-  admin: true
-)
+User.create!(name: 'Admin', email: 'admin@garcon.com', password: 'garcon123', admin: true)
 
 20.times do
   Table.create!(
-    name: Faker::Games::LeagueOfLegends.champion,
-    admin: %w[available reserved blocked].sample
+    reference: Faker::Games::LeagueOfLegends.champion,
+    status: %w[available reserved open].sample
   )
 end

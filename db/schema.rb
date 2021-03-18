@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_004115) do
+ActiveRecord::Schema.define(version: 2021_03_18_232003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "commands", force: :cascade do |t|
-    t.string "payment_status"
     t.string "client_name"
     t.string "client_cpf"
     t.string "client_email"
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_004115) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "order_id", null: false
+    t.integer "status"
     t.index ["order_id"], name: "index_commands_on_order_id"
   end
 
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 2021_03_18_004115) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity"
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "commands_id", null: false
+    t.integer "status"
     t.index ["commands_id"], name: "index_line_items_on_commands_id"
   end
 
@@ -49,10 +49,11 @@ ActiveRecord::Schema.define(version: 2021_03_18_004115) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "table_id", null: false
+    t.string "reference"
+    t.integer "status"
     t.index ["table_id"], name: "index_orders_on_table_id"
   end
 
@@ -71,9 +72,9 @@ ActiveRecord::Schema.define(version: 2021_03_18_004115) do
 
   create_table "tables", force: :cascade do |t|
     t.string "reference"
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status"
   end
 
   create_table "users", force: :cascade do |t|
