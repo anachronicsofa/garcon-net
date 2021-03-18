@@ -1,5 +1,5 @@
 class Table < ApplicationRecord
-  has_many :orders
+  has_many :orders, class_name: 'Order'
   validates :reference, :status, presence: true 
 
   scope :ordered_by_ref, -> { order(reference: :asc) }
