@@ -1,6 +1,6 @@
   <%= simple_form_for @table do |f| %>
     <%= f.input :reference, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
-    <%= f.select :status, Table::STATUS, input_html: { class: 'text_input' } %>
+    <%= f.input :status, collection: Table.statuses.keys, input_html: { class: 'text_input' } %>
     <div class="buttons">
       <%= f.button :submit, 'Criar Mesa', :class => "button_form"%>
       <%= link_to 'Cancelar', tables_path, :class => "button_back"%>

@@ -1,25 +1,20 @@
 class TablesController < ApplicationController
   before_action :set_table, only: %i[ show edit update destroy ]
 
-  # GET /tables or /tables.json
   def index
-    @tables = Table.paginate(page: params[:page], per_page: 15)
+    @tables = Table.ordered_by_ref.paginate(page: params[:page], per_page: 15)
   end
 
-  # GET /tables/1 or /tables/1.json
   def show
   end
 
-  # GET /tables/new
   def new
     @table = Table.new
   end
 
-  # GET /tables/1/edit
   def edit
   end
 
-  # POST /tables or /tables.json
   def create
     @table = Table.new(table_params)
 
@@ -34,7 +29,6 @@ class TablesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tables/1 or /tables/1.json
   def update
     respond_to do |format|
       if @table.update(table_params)
@@ -47,7 +41,6 @@ class TablesController < ApplicationController
     end
   end
 
-  # DELETE /tables/1 or /tables/1.json
   def destroy
     @table.destroy
     respond_to do |format|
@@ -57,12 +50,10 @@ class TablesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_table
       @table = Table.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def table_params
       params.require(:table).permit(:reference, :status)
     end
