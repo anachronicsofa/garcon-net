@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :table
 
   scope :from_table, -> (table_id){ where(table_id: table_id) }
-  scope :paid, -> { where(status: 'paid') }
+  scope :paid, -> { paid? }
 
   validates :status, presence: true
   
