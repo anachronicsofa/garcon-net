@@ -1,5 +1,6 @@
 class Command < ApplicationRecord
-  belongs_to :order, has_many :line_items
+  has_many :line_items
+  belongs_to :order
 
   validates :total, :payment_status, :client_name, presence: true 
 
