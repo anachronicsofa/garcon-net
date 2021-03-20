@@ -1,42 +1,12 @@
-<%= form_with(model: command, local: true) do |form| %>
-  <% if command.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(command.errors.count, "error") %> prohibited this command from being saved:</h2>
-
-      <ul>
-        <% command.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= simple_form_for @command do |f| %>
+    <%= f.input :client_name, required: true, input_html: { class: 'text_input', maxlength: 20 } %>
+    <%= f.input :client_email, input_html: { class: 'text_input' } %>
+    <%= f.input :client_cpf, input_html: { class: 'text_input' } %>
+    <%= f.input :order_id, collection: Order.all.open.ids, input_html: { class: 'text_input' } %>
+    <%= f.hidden_field :total, value: 0.0 %>
+    <%= f.hidden_field :status, value: 'open' %>
+    <div class="buttons">
+      <%= f.button :submit, 'Criar Pedido', :class => "button_form"%>
+      <%= link_to 'Cancelar', admin_tables_path, :class => "button_back"%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :payment_status %>
-    <%= form.text_field :payment_status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_name %>
-    <%= form.text_field :client_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_cpf %>
-    <%= form.text_field :client_cpf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_email %>
-    <%= form.text_field :client_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :total %>
-    <%= form.text_field :total %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
