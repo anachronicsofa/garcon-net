@@ -1,9 +1,35 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-title"> Pedido <%= @order.reference%> </h1>
+<h3 id="notice"><%= notice %></h3>
+  <div class="btn_container">
+    <%= link_to 'Criar Comanda', new_command_path, class: "btn btn--link" %>
+  </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+<div class="table_container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Item </th>
+        <th> Preço </th>
+        <th> Quantidade </th>
+        <th> Total </th>
+        <th> Cliente </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+    <tbody>
+      <% @commands.each do |command| %>      
+        <% command.line_items.each do |li| %>
+          <tr>
+            <td> Produto 1 </td>
+            <td> R$ <%= li.price %></td>
+            <td><%= li.quantity %></td>
+            <td> R$ <%= li.total %></td>
+            <td> <%= li.command.client_name %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
