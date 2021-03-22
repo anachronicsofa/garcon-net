@@ -39,6 +39,9 @@
     &:hover {
       background-color: #54bd46bb;
     }
+    &.open {
+      background-color: #bdbdbd;
+    }
   }
 
   &.btn--transparent {

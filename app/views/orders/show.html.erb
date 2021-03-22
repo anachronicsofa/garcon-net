@@ -13,6 +13,7 @@
         <th> Quantidade </th>
         <th> Total </th>
         <th> Cliente </th>
+        <th> Pagamento </th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -22,10 +23,17 @@
         <% command.line_items.each do |li| %>
           <tr>
             <td> Produto 1 </td>
-            <td> R$ <%= li.price %></td>
-            <td><%= li.quantity %></td>
-            <td> R$ <%= li.total %></td>
+            <td><%= display_money(li.price) %></td>
+            <td>x⠀ <%= li.quantity %></td>
+            <td><%= display_money(li.total) %></td>
             <td> <%= li.command.client_name %></td>
+            <td>
+              <% if li.command.paid? %>
+                <a class= "btn btn--show"> Pago </a>
+              <% else %>
+                <a class= "btn btn--show open"> Open </a>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       <% end %>
