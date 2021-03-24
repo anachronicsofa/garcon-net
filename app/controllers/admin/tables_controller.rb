@@ -7,7 +7,7 @@ class Admin::TablesController < ApplicationController
 
   def show
     @orders = Order.where(table_id: @table.id)
-    @open_order = Order.find_by(table_id: @table.id, status: 'open')
+    @open_order = Order.open.find_by(table_id: @table.id)
   end
 
   private
