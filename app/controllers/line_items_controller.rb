@@ -55,6 +55,6 @@ class LineItemsController < ApplicationController
     end
 
     def line_item_params
-      params.require(:line_item).permit(:quantity, :status, :command_id)
+      params.require(:line_item).permit(:quantity, :status, :command_id, :price)
     end
 end

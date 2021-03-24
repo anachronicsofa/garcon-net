@@ -2,7 +2,9 @@
 <h3 id="notice"><%= notice %></h3>
   <div class="btn_container">
   <%= link_to '↵', admin_tables_path %>
-    <% if !@table.open? %>
+    <% if @table.open? %>
+      <%= link_to 'Acessar Pedido Ativo', order_path(@open_order), class: "btn btn--link" %>
+    <% else %>
       <%= link_to 'Abrir Mesa', new_order_path, class: "btn btn--link" %>
     <% end %> 
   </div>
@@ -11,13 +13,9 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Item</th>
-        <th>Valor</th>
-        <th> Quantidade </th>
+        <th>Referência</th>
+        <th>Status</th>
         <th> Total </th>
-        <th> Status </th>
-        <th> Comanda </th>
-        <th> Pagamento </th>
         <th colspan="3"></th>
       </tr>
     </thead>

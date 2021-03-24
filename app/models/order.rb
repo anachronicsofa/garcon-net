@@ -8,5 +8,16 @@ class Order < ApplicationRecord
   validates :status, presence: true
   
   enum status: [:open, :paid]
-  
+
+  def to_pay 
+    total - already_paid
+  end
+
+  def already_paid
+    commands.paid.count > 0 ? commands.paid.map { |c| c.total }.inject(:+) : 0.0
+  end
+
+  def total 
+    commands.map { |c| c.total }.inject(:+)
+  end
 end

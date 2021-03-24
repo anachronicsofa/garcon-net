@@ -1,0 +1,25 @@
+.box{ 
+  margin-top: 3%;
+  width: 20%;
+}
+
+.order_details {
+  margin: 0;
+  padding: 0;
+}
+
+.order_details li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 4px solid #bdbdbd;
+  border-radius: 10px;
+
+  &.not_paid {
+    border: 4px solid#c43b36;
+  }
+
+  &.paid {
+    border: 4px solid#7bc436;
+  }
+}

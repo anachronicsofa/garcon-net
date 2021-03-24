@@ -3,6 +3,6 @@
     <%= f.input :status, collection: Table.statuses.keys, input_html: { class: 'text_input' } %>
     <div class="buttons">
       <%= f.button :submit, 'Criar Mesa', :class => "button_form"%>
-      <%= link_to 'Cancelar', tables_path, :class => "button_back"%>
+      <%= link_to 'Cancelar', admin_tables_path, :class => "button_back"%>
     </div>
   <% end %>

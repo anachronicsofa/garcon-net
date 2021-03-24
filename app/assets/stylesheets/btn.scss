@@ -27,6 +27,23 @@
     }
   }
 
+  &.btn--show {
+    background-color: #7bc436;
+    color: rgb(245, 243, 243);
+    outline: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 4px;
+    &:hover {
+      background-color: #54bd46bb;
+    }
+    &.open {
+      background-color: #bdbdbd;
+    }
+  }
+
   &.btn--transparent {
     background-color: transparent;
     border: 1px solid #eee;
@@ -79,4 +96,8 @@
 
 .btn_container {
   margin-left: 3%;
+}
+
+.btn_back {
+  margin-top: 5rem;
 }

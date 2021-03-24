@@ -5,9 +5,9 @@
 <div class="table_container">
   <div class="grid-container">
       <% @tables.each do |table| %>
-        <% if table.status == 'available' %>  
+        <% if table.open? %>  
           <div class="grid-item green"><%= link_to table.reference, table_path(table) %></div>
-        <% elsif table.status == 'reserved' %>
+        <% elsif table.reserved? %>
           <div class="grid-item yellow"><%= link_to table.reference, table_path(table) %></div>
         <% else %>
           <div class="grid-item"><%= link_to table.reference, table_path(table) %></div>
@@ -24,9 +24,9 @@
         </div>
     </ul>
     <ul>
-      <li class="status green"> (•) Disponível </li>
+      <li class="status green"> (•) Funcionando </li>
       <li class="status yellow"> (•) Reservada </li>
-      <li class="status"> (•) Ocupada </li>
+      <li class="status"> (•) Vagas </li>
     </ul> 
   </div>
 </div>

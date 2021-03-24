@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
+    @commands = Command.where(order_id: @order.id)
   end
 
   # GET /orders/new
