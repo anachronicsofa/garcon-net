@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   belongs_to :table
 
   scope :from_table, -> (table_id){ where(table_id: table_id) }
+  scope :open_from_table, -> (table_id) { find_by(status: 'open', table_id: table_id) }
   scope :paid, -> { paid? }
 
   validates :status, presence: true
@@ -10,7 +11,7 @@ class Order < ApplicationRecord
   enum status: [:open, :paid]
 
   def to_pay 
-    total - already_paid
+    (total - already_paid) if total 
   end
 
   def already_paid

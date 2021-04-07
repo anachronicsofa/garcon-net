@@ -1,22 +1,8 @@
-<%= form_with(model: order, local: true) do |form| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
-      <ul>
-        <% order.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @order do |f| %>
+  <%= f.input :table_id, required: true, collection: Table.available.ids, input_html: { class: 'text_input', maxlength: 30 } %>
+  <%= f.hidden_field :status, value: 'open' %>
+  <div class="buttons">
+    <%= f.button :submit, 'Abrir Mesa', :class => "button_form"%>
+    <%= link_to 'Cancelar', admin_tables_path, :class => "button_back"%>
   </div>
 <% end %>

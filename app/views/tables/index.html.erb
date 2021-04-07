@@ -6,7 +6,7 @@
   <div class="grid-container">
       <% @tables.each do |table| %>
         <% if table.open? %>  
-          <div class="grid-item green"><%= link_to table.reference, table_path(table) %></div>
+          <div class="grid-item green"><%= link_to table.reference, order_path(Order.open_from_table(table.id)) %></div>
         <% elsif table.reserved? %>
           <div class="grid-item yellow"><%= link_to table.reference, table_path(table) %></div>
         <% else %>

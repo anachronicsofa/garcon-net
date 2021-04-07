@@ -6,7 +6,7 @@ class Admin::TablesController < ApplicationController
   end
 
   def show
-    @orders = Order.where(table_id: @table.id)
+    @orders = Order.paid.where(table_id: @table.id)
     @open_order = Order.open.find_by(table_id: @table.id)
   end
 

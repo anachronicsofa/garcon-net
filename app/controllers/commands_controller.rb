@@ -20,8 +20,7 @@ class CommandsController < ApplicationController
 
     respond_to do |format|
       if @command.save
-        format.html { redirect_to @command, notice: "Command was successfully created." }
-        format.json { render :show, status: :created, location: @command }
+        format.html { redirect_to order_path(@command.order_id), notice: "Command was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @command.errors, status: :unprocessable_entity }

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+  befor
 
   # GET /orders or /orders.json
   def index
@@ -26,11 +27,10 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        @order.table.open!
         format.html { redirect_to @order, notice: "Order was successfully created." }
-        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
