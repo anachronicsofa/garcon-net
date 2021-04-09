@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_212627) do
     t.string "client_name"
     t.string "client_cpf"
     t.string "client_email"
-    t.float "total"
+    t.float "total", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "order_id", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_212627) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status"
-    t.float "price"
+    t.float "price", default: 0.0
     t.bigint "command_id", null: false
     t.index ["command_id"], name: "index_line_items_on_command_id"
   end
