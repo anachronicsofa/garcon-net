@@ -40,6 +40,7 @@
 ```
 
 ## Database
+  Postegresql 0.21.0 
 
 ```
   copy .env-sample file and rename with .env
