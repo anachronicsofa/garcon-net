@@ -1,41 +1,39 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-title"> Produtos </h1>
+<h3 id="notice"><%= notice %></h3>
+  <div class="btn_container">
+    <%= link_to 'Adicionar Produto', new_product_path, class: "btn btn--link" %>
+  </div>
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Available</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Prompt delivery</th>
-      <th>Stock</th>
-      <th>Preparation time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<div class="table_container">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.available %></td>
-        <td><%= product.price %></td>
-        <td><%= product.description %></td>
-        <td><%= product.type %></td>
-        <td><%= product.prompt_delivery %></td>
-        <td><%= product.stock %></td>
-        <td><%= product.preparation_time %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Pronta Entrega</th>
+        <th>Disponível</th>
+        <th>Stock</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= display_money(product.price) %></td>
+          <td><%= product.prompt_delivery %></td>
+          <td>
+            <%= ' ⠀✔' if product.available %>
+          </td>
+          <td><%= product.stock %></td>
+          <td><%= link_to '✎', edit_product_path(product), class: 'btn btn--discrete' %>
+          <%= link_to '✘', product, method: :destroy, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
 
-<%= link_to 'New Product', new_product_path %>
+<%= will_paginate @products, :previous_label => '  ⇦', :next_label => ' ⇨', input_html: {class: 'pagination'} %>

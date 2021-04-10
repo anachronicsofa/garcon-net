@@ -1,27 +1,39 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-title"> Pedidos </h1>
+<h3 id="notice"><%= notice %></h3>
+  <div class="btn_container">
+    <%= link_to 'Abrir Pedido', new_order_path, class: "btn btn--link" %>
+  </div>
 
-<h1>Orders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+<div class="table_container">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= order.status %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Referência</th>
+        <th>Mesa</th>
+        <th>Total</th>
+        <th>Status</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.reference %></td>
+          <td><%= link_to Table.find(order.table_id).reference, order_path(order) %></td>
+          <td><%= order.total %></td>
+          <td>
+            <% if order.paid? %>
+              <a class= "btn btn--show"> Pago </a>
+            <% else %>
+              <a class= "btn btn--show open"> Open </a>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
 
-<%= link_to 'New Order', new_order_path %>
+<%= will_paginate @commands, :previous_label => '  ⇦', :next_label => ' ⇨', input_html: {class: 'pagination'} %>
+
