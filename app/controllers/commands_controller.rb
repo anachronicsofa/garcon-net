@@ -2,7 +2,7 @@ class CommandsController < ApplicationController
   before_action :set_command, only: %i[ show edit update destroy ]
 
   def index
-    @commands = Command.all
+    @commands = Command.paginate(page: params[:page], per_page: 15)
   end
 
   def show

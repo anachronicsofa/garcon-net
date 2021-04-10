@@ -1,57 +1,14 @@
-<%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-        <% product.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :available %>
-    <%= form.check_box :available %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :prompt_delivery %>
-    <%= form.check_box :prompt_delivery %>
-  </div>
-
-  <div class="field">
-    <%= form.label :stock %>
-    <%= form.number_field :stock %>
-  </div>
-
-  <div class="field">
-    <%= form.label :preparation_time %>
-    <%= form.time_select :preparation_time %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
+  <%= f.input :description, required: true, input_html: { class: 'text_input',  maxlength: 50 } %>
+  <%= f.input :type, input_html: { class: 'text_input'} %>
+  <%= f.input :price, required: true, input_html: { class: 'text_input'} %>
+  <%= f.input :stock, input_html: { class: 'text_input' } %>
+  <%= f.input :prompt_delivery, :label => '⠀Pronta Entrega', :value => false, input_html: { class: 'checkbox' } %>
+  <%= f.input :available, :label => '⠀Disponível (Irá automaticamente para o cardápio)', :value => false, input_html: { class: 'checkbox' } %>
+  <div class="buttons">
+    <%= f.button :submit, 'Criar Produto', :class => "button_form"%>
+    <%= link_to 'Cancelar', products_path, :class => "button_back"%>
   </div>
 <% end %>
+

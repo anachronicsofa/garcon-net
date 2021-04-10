@@ -1,22 +1,9 @@
-<%= form_with(model: menu, local: true) do |form| %>
-  <% if menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
-
-      <ul>
-        <% menu.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @menu do |f| %>
+  <%= f.input :name, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
+  <%= f.input :active, :label => '⠀Ativo', :value => false, input_html: { class: 'checkbox' } %>
+  <div class="buttons">
+    <%= f.button :submit, 'Criar Cardápio', :class => "button_form"%>
+    <%= link_to 'Cancelar', menus_path, :class => "button_back"%>
   </div>
 <% end %>
+
