@@ -4,9 +4,9 @@
   <td><%= line_item.status %></td>
   <td><%= line_item.total %></td>
   <td>
-    <%= link_to '🧑‍🍳', line_item_update_state_path({id: line_item.id, state: :preparing}), remote: true, method: :post, class: 'btn btn--delete' %>
-    <%= link_to '✔', line_item_update_state_path({id: line_item.id, state: :ready}), remote: true, method: :post, class: 'btn btn--show' %>
-    <%= link_to '📩', line_item_update_state_path({id: line_item.id, state: :delivered}), remote: true, method: :post, class: 'btn btn--discrete' %>
+    <%= link_to '🧑‍🍳', line_item_update_state_path({id: line_item.id, state: :preparing}), remote: true, method: :post, class: 'btn btn--delete' unless line_item.preparing? %>
+    <%= link_to '✔', line_item_update_state_path({id: line_item.id, state: :ready}), remote: true, method: :post, class: 'btn btn--show' unless line_item.ready? %>
+    <%= link_to '📩', line_item_update_state_path({id: line_item.id, state: :delivered}), remote: true, method: :post, class: 'btn btn--discrete' unless line_item.delivered? %>
   </td>
 </tr>
 
