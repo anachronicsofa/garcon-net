@@ -96,6 +96,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jquery (0.0.1)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -128,6 +129,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.3.5)
@@ -223,6 +226,10 @@ GEM
     unicode-display_width (1.6.0)
     warden (1.2.9)
       rack (>= 2.0.9)
+    webpacker (4.3.0)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -239,6 +246,7 @@ DEPENDENCIES
   devise
   faker
   jbuilder (~> 2.7)
+  jquery
   listen (~> 3.2)
   mimemagic!
   pg (~> 0.21.0)
@@ -253,6 +261,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  webpacker
   will_paginate (~> 3.1.0)
 
 RUBY VERSION

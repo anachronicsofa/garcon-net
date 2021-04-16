@@ -1,0 +1,6 @@
+var lineItemTr = document.getElementById("<%= @line_item.id %>")
+var new_tr = "<%= escape_javascript(render partial: 'commands/line_item', locals: { line_item: @line_item }).html_safe%>"
+
+if(lineItemTr.outerHTML) { //if outerHTML is supported
+    lineItemTr.outerHTML=new_tr; ///it's simple replacement of whole element with contents of str var
+}
