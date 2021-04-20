@@ -38,7 +38,7 @@ class MenusController < ApplicationController
   def update
     respond_to do |format|
       if @menu.update(menu_params)
-        format.html { redirect_to @menu, notice: "Menu was successfully updated." }
+        format.html { redirect_to menus_path, notice: "Menu was successfully updated." }
         format.json { render :show, status: :ok, location: @menu }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class MenusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def menu_params
-      params.require(:menu).permit(:active)
+      params.require(:menu).permit(:active, :name)
     end
 end

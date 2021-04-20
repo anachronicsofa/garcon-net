@@ -1,27 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-title"> Cardápios </h1>
+<h3 id="notice"><%= notice %></h3>
 
-<h1>Menus</h1>
+<div class="btn_container">
+  <%= link_to 'Criar Cardápio', new_menu_path, class: "btn btn--link" %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Active</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @menus.each do |menu| %>
-      <tr>
-        <td><%= menu.active %></td>
-        <td><%= link_to 'Show', menu %></td>
-        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Menu', new_menu_path %>
+<div class="table_container">
+  <div class="grid-container">
+      <% @menus.each do |menu| %>
+        <% if menu.active %>  
+          <div class="grid-item green"><%= link_to menu.name, edit_menu_path(menu) %></div>
+        <% else %>
+          <div class="grid-item"><%= link_to menu.name, edit_menu_path(menu) %></div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
