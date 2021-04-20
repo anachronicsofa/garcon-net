@@ -18,6 +18,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        @line_item.populate
         format.html { redirect_to @line_item, notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }
       else
@@ -61,6 +62,6 @@ class LineItemsController < ApplicationController
   end
 
   def line_item_params
-    params.require(:line_item).permit(:quantity, :status, :command_id, :price)
+    params.require(:line_item).permit(:quantity, :status, :command_id, :price, :product_id)
   end
 end

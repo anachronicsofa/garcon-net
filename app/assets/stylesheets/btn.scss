@@ -70,6 +70,23 @@
     }
   }
 
+  &.btn--linkado {
+    text-transform: uppercase;
+    padding: 15px 16px;
+    background: white;
+    color: #6C63FF;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline;
+    border: 2px solid #6C63FF;
+    border-radius: 12px;
+    
+    &:hover {
+      background-color: #4b45bd;
+      color: white;
+    }
+  }
+
   &.btn--small {
     padding: 10px 15px;
     height: 100%;

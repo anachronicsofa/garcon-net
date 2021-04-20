@@ -1,27 +1,11 @@
-<%= form_with(model: line_item, local: true) do |form| %>
-  <% if line_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(line_item.errors.count, "error") %> prohibited this line_item from being saved:</h2>
-
-      <ul>
-        <% line_item.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @line_item do |f| %>
+  <label> Comanda: </label>
+  <%= f.collection_select(:command_id, Command.all, :id, :client_name, input_html: { class: 'text_input' } ) %>        
+  <label> Produto: </label>
+  <%= f.collection_select(:product_id, Product.all, :id, :name, input_html: { class: 'text_input' } ) %>        
+  <%= f.input :quantity, input_html: { class: 'text_input' } %>
+  <div class="buttons">
+    <%= f.button :submit, 'Adicionar Item', :class => "button_form"%>
+    <%= link_to 'Cancelar', line_items_path, :class => "button_back"%>
   </div>
 <% end %>
