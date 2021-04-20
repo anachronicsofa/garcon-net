@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_04_15_224414) do
     t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
   create_table "orders", force: :cascade do |t|
