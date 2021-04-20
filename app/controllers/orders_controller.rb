@@ -23,9 +23,9 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
-
     respond_to do |format|
       if @order.save
+        @order.update(reference: "ORDER-#{@order.id}")
         @order.table.open!
         format.html { redirect_to @order, notice: "Order was successfully created." }
       else

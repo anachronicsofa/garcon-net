@@ -1,4 +1,4 @@
-<h1 class="page-title"><%= Table.find(@order.table_id).reference %> || Pedido <%= @order.reference%> </h1>
+<h1 class="page-title"><%= Table.find(@order.table_id).reference %> || <%= @order.reference%> </h1>
 <h3 id="notice"><%= notice %></h3>
   <div class="btn_container">
     <%= link_to 'Criar Comanda', new_command_path, class: "btn btn--link" %>

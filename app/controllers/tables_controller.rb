@@ -6,6 +6,7 @@ class TablesController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @orders = Order.where(table_id: @table.id)
     @open_order = Order.find_by(table_id: @table.id, status: 'open')
   end

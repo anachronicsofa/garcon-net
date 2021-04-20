@@ -3,7 +3,11 @@
   <div class="btn_container">
   <%= link_to '↵', admin_tables_path %>
     <% if !@table.open? %>
-      <%= link_to 'Abrir Mesa', new_order_path, class: "btn btn--link" %>
+      <%= simple_form_for @order do |f| %>
+        <%= f.hidden_field :table_id, required: true, value: @table.id %>
+        <%= f.hidden_field :status, value: 'open' %>
+        <%= f.button :submit, 'Abrir Mesa', class: "btn btn--link" %>
+      <% end %>
     <% end %> 
   </div>
 
