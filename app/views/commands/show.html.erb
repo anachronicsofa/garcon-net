@@ -1,0 +1,23 @@
+<h1 class="page-title"> Comanda </h1>
+<h3 id="notice"><%= notice %></h3>
+
+<div class="table_container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantidade</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Pago? </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @command.line_items.each do |line_item| %>
+        <%= render partial: "line_item", locals: {line_item: line_item} %>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>

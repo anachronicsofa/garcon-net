@@ -1,5 +1,4 @@
-
-<h1 class="page-title"> Comandas </h1>
+<h1 class="page-title"> Comanda </h1>
 <h3 id="notice"><%= notice %></h3>
   <div class="btn_container">
     <%= link_to 'Criar Comanda', new_command_path, class: "btn btn--link" %>
@@ -28,6 +27,7 @@
             <%= ' ⠀✔' if command.status == 'paid' %>
           </td>
           <td><%= link_to '✎', edit_command_path(command), class: 'btn btn--discrete' %>
+          <%= link_to '🚧', command_path(command), class: 'btn btn--discrete' %>
           <%= link_to '✘', command, method: :destroy, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
