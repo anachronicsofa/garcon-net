@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'landing#index', as: :welcome
   get 'register', to: 'landing#register', as: :register
   post 'line_item/update_state', to: 'line_items#update_state'
+  post 'command/confirm_payment', to: 'commands#confirm_payment'
 
   namespace :admin do
     resources :tables

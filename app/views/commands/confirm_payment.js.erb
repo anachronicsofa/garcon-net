@@ -1,0 +1,6 @@
+var commandTr = document.getElementById("<%= @command.id %>")
+var new_tr = "<%= escape_javascript(render partial: 'commands/payment_option', locals: { command: @command }).html_safe%>"
+
+if(commandTr.outerHTML) { 
+    commandTr.outerHTML=new_tr; 
+}

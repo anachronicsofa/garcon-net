@@ -1,5 +1,7 @@
-<h1 class="page-title"> Comanda </h1>
+<h1 class="page-title"> Comanda de <%= @command.client_name %></h1>
 <h3 id="notice"><%= notice %></h3>
+
+<%= render partial: "payment_option", locals: {command: @command} %>
 
 <div class="table_container">
   <table class="table">
@@ -9,7 +11,7 @@
         <th>Quantidade</th>
         <th>Status</th>
         <th>Total</th>
-        <th>Pago? </th>
+        <th> </th>
       </tr>
     </thead>
 

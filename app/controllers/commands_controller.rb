@@ -1,5 +1,5 @@
 class CommandsController < ApplicationController
-  before_action :set_command, only: %i[show edit update destroy]
+  before_action :set_command, only: %i[show edit update destroy confirm_payment]
 
   def index
     @commands = Command.paginate(page: params[:page], per_page: 15)
@@ -12,6 +12,13 @@ class CommandsController < ApplicationController
   end
 
   def edit; end
+
+  def confirm_payment
+    @command.update(status: 'paid')
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def create
     @command = Command.new(command_params)
