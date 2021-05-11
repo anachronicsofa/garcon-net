@@ -2,7 +2,7 @@ class TablesController < ApplicationController
   before_action :set_table, only: %i[ show edit update destroy ]
 
   def index
-    @tables = Table.ordered_by_ref.paginate(page: params[:page], per_page: 15)
+    @tables = Table.ordered_by_ref.paginate(page: params[:page], per_page: 20)
   end
 
   def show

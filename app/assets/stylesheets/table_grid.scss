@@ -5,8 +5,7 @@
   padding: 10px;
 }
 
-  .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid-item {
   padding: 20px;
   font-size: 20px;
   text-align: center;
@@ -18,7 +17,7 @@
     color: white;
   }
   &.green {
-    background-color: #45c443;
+    background-color: #4DB832;
   }
   &.yellow {
     background-color: #b84c1d;
@@ -33,7 +32,7 @@
 
   &.green {
     margin-bottom: -10px;
-    color: #45c443;
+    color: #4DB832;
   }
   &.yellow {
     margin-bottom: -10px;
