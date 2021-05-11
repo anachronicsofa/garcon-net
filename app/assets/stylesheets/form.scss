@@ -40,6 +40,10 @@
   box-sizing: border-box;
   border-radius: 6px;
   margin-bottom: 10px;
+
+  &.extra {
+    width: 21%;
+  }
 }
 
 .checkbox {

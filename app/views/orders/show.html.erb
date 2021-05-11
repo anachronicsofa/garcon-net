@@ -1,7 +1,16 @@
 <h1 class="page-title"><%= Table.find(@order.table_id).reference %> || <%= @order.reference%> </h1>
 <h3 id="notice"><%= notice %></h3>
+
   <div class="btn_container">
-    <%= link_to 'Criar Comanda', new_command_path, class: "btn btn--link" %>
+  <%= simple_form_for @command do |f| %>
+    <%= f.input :client_name, label: 'Nome da Comanda: ', required: true, input_html: { class: 'text_input extra', maxlength: 20 } %>
+    <%= f.hidden_field :order_id, value: @order.id %>
+    <%= f.hidden_field :total, value: 0.0 %>
+    <%= f.hidden_field :status, value: 'open' %>
+  <% end %>
+  <br>
+    <%= link_to 'Criar Comanda Detalhada', new_command_path, class: "btn btn--link" %>
+    <%= link_to 'Adicionar Item', new_line_item_path, class: "btn btn--linkado" %>
   </div>
 
 <div class="table_container">
@@ -22,11 +31,11 @@
       <% @commands.each do |command| %>      
         <% command.line_items.each do |li| %>
           <tr>
-            <td> Produto 1 </td>
+            <td><%= Product.find(li.product_id).name %></td>
             <td><%= display_money(li.price) %></td>
             <td>x⠀ <%= li.quantity %></td>
             <td><%= display_money(li.total) %></td>
-            <td> <%= li.command.client_name %></td>
+            <td> <%= link_to li.command.client_name, command_path(li.command) %></td>
             <td>
               <% if li.command.paid? %>
                 <a class= "btn btn--show"> Pago </a>
@@ -48,3 +57,14 @@
    </ul> 
   </div>
 </div>
+
+<script>
+
+  $("input").keypress(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+      $("new_command").submit();
+    }
+  });
+
+</script>

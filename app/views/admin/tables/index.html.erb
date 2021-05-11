@@ -20,7 +20,7 @@
           <td><%= link_to table.reference, admin_table_path(table) %></td>
           <td><%= table.status %></td>
           <td><%= link_to '✎', edit_table_path(table), class: 'btn btn--discrete' %>
-          <%= link_to '◔◔', admin_table_path(table), method: :destroy, class: 'btn btn--show', data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to '◔◔', admin_table_path(table), class: 'btn btn--show'%></td>
         </tr>
       <% end %>
     </tbody>

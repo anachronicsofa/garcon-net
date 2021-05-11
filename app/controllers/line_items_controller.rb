@@ -18,11 +18,10 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item, notice: 'Line item was successfully created.' }
-        format.json { render :show, status: :created, location: @line_item }
+        @line_item.populate
+        format.html { redirect_to order_path(@line_item.command.order), notice: 'Line item was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,6 +60,6 @@ class LineItemsController < ApplicationController
   end
 
   def line_item_params
-    params.require(:line_item).permit(:quantity, :status, :command_id, :price)
+    params.require(:line_item).permit(:quantity, :status, :command_id, :price, :product_id)
   end
 end
