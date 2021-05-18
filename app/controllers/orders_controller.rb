@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit update destroy]
+  before_action :close_order, only: %i[show] 
 
   def index
     @orders = Order.paginate(page: params[:page], per_page: 15)
@@ -33,10 +34,8 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,11 +44,17 @@ class OrdersController < ApplicationController
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
   
   private
+
+  def close_order
+    if @order.already_paid == @order.total
+      @order.update(status: 'paid') 
+      @order.table.available! 
+    end
+  end
 
   def set_order
     @order = Order.find(params[:id])
