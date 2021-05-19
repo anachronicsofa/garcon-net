@@ -1,9 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: <%= ENV.fetch("DATABASE_USER") { 'postgres' } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { 'postgres' } %>
+  port: 5432
+  host: <%= ENV.fetch("DATABASE_HOST") { 'db' } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: postgres
   timeout: 5000
 
 development:
