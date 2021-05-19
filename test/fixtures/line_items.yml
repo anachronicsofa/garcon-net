@@ -3,7 +3,10 @@
 one:
   quantity: 1
   status: MyString
-
+  command_id: 1
+  product_id: 1
 two:
   quantity: 1
   status: MyString
+  command_id: 1
+  product_id: 1
