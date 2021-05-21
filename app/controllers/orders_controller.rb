@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit update destroy]
+  before_action :close_order, only: %i[show]
 
   def index
     @orders = Order.paginate(page: params[:page], per_page: 15)
@@ -50,6 +51,13 @@ class OrdersController < ApplicationController
   end
   
   private
+
+  def close_order
+    if @order.already_paid == @order.total
+      @order.update(status: 'paid') 
+      @order.table.available! 
+    end
+  end
 
   def set_order
     @order = Order.find(params[:id])
