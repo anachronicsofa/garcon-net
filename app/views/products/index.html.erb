@@ -13,6 +13,7 @@
         <th>Pronta Entrega</th>
         <th>Disponível</th>
         <th>Stock</th>
+        <th>Tempo estimado</th>
         <th></th>
       </tr>
     </thead>
@@ -27,6 +28,7 @@
             <%= ' ⠀✔' if product.available %>
           </td>
           <td><%= product.stock %></td>
+          <td><%= product.average_time %></td>
           <td><%= link_to '✎', edit_product_path(product), class: 'btn btn--discrete' %>
           <%= link_to '✘', product, method: :destroy, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
         </tr>
