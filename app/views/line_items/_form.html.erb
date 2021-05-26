@@ -1,6 +1,6 @@
 <%= simple_form_for @line_item do |f| %>
   <label> Comanda: </label>
-  <%= f.collection_select(:command_id, Command.all, :id, :client_name, input_html: { class: 'text_input' } ) %>        
+  <%= f.collection_select(:command_id, Command.open.all, :id, :client_name, input_html: { class: 'text_input' } ) %>        
   <label> Produto: </label>
   <%= f.collection_select(:product_id, Product.all, :id, :name, input_html: { class: 'text_input' } ) %>        
   <%= f.input :quantity, input_html: { class: 'text_input' } %>

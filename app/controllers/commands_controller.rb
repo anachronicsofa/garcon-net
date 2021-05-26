@@ -22,6 +22,7 @@ class CommandsController < ApplicationController
 
   def create
     @command = Command.new(command_params)
+    @command.open!
 
     respond_to do |format|
       if @command.save
