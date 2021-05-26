@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
   private
 
   def close_order
-    if @order.already_paid == @order.total
+    if @order.already_paid == @order.total && @order.total > 0
       @order.update(status: 'paid') 
       @order.table.available! 
     end
