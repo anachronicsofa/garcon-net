@@ -1,1 +1,7 @@
 <h1 class="page-title"> Dashboard </h1>
+
+<div class="table_container">
+  <%= line_chart @orders_number, title: 'Pedidos por Semana'%>
+</div>
+
+<%= column_chart @money_per_week %>

@@ -19,6 +19,6 @@ class Order < ApplicationRecord
   end
 
   def total 
-    commands.map { |c| c.total }.inject(:+)
+    total = commands.map { |c| c.total }.inject(:+)
   end
 end

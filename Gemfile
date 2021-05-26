@@ -5,8 +5,10 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "chartkick"
 gem 'devise'
 gem 'faker'
+gem 'groupdate'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery'
 gem 'mimemagic'
