@@ -1,6 +1,6 @@
 <%= simple_form_for @menu do |f| %>
   <%= f.input :name, required: true, input_html: { class: 'text_input', maxlength: 30 } %>
-  <%= f.association :products, as: :select %>
+  <%= f.association :products, as: :check_boxes %>
   <%= f.input :active, :label => '⠀Ativo', :value => false, input_html: { class: 'checkbox' } %>
   <div class="buttons">
     <%= f.button :submit, 'Criar Cardápio', :class => "button_form"%>
