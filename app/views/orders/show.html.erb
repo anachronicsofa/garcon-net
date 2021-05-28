@@ -1,17 +1,21 @@
 <h1 class="page-title"><%= Table.find(@order.table_id).reference %> || <%= @order.reference%> </h1>
 <h3 id="notice"><%= notice %></h3>
 
+<% if @order.paid? %>
+  <h3 id="notice"><%= link_to 'Pedido Finalizado!', orders_path, class: "btn btn--show", disable: true %></h3>
+<% else %>
   <div class="btn_container">
-  <%= simple_form_for @command do |f| %>
-    <%= f.input :client_name, label: 'Nome da Comanda: ', required: true, input_html: { class: 'text_input extra', maxlength: 20 } %>
-    <%= f.hidden_field :order_id, value: @order.id %>
-    <%= f.hidden_field :total, value: 0.0 %>
-    <%= f.hidden_field :status, value: 'open' %>
-  <% end %>
+    <%= simple_form_for @command do |f| %>
+      <%= f.input :client_name, label: 'Nome da Comanda: ', required: true, input_html: { class: 'text_input extra', maxlength: 20 } %>
+      <%= f.hidden_field :order_id, value: @order.id %>
+      <%= f.hidden_field :total, value: 0.0 %>
+      <%= f.hidden_field :status, value: 'open' %>
+    <% end %>
   <br>
     <%= link_to 'Criar Comanda Detalhada', new_command_path, class: "btn btn--link" %>
     <%= link_to 'Adicionar Item', new_line_item_path, class: "btn btn--linkado" %>
   </div>
+<% end %>
 
 <div class="table_container">
   <table class="table">

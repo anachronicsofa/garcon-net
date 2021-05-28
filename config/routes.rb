@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tables
+    get 'dashboard', to: 'dashboard#index', as: :dashboard
   end
 end

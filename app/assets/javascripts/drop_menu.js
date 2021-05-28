@@ -1,6 +1,6 @@
-const a  = document.querySelector('.admin a');
-const ul = document.querySelector('ul.buttons-admin')
-const li = document.querySelectorAll('ul.buttons-admin>li');
+let a  = document.querySelector('.admin a');
+let ul = document.querySelector('ul.buttons-admin')
+let li = document.querySelectorAll('ul.buttons-admin>li');
 
 
 a.onmouseenter = () =>{ 

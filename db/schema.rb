@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_211510) do
     t.bigint "table_id", null: false
     t.string "reference"
     t.integer "status"
-    t.float "total", default: 0.0
     t.index ["table_id"], name: "index_orders_on_table_id"
   end
 

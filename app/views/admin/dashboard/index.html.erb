@@ -1,0 +1,19 @@
+<h1 class="page-title"> Dashboard </h1>
+
+<div class="table_container">
+  <%= line_chart @money_per_week, title: 'Faturamento por Semana'%>
+</div>
+
+<div class ="dashboard_medium">
+  <%= column_chart @orders_count, colors: ["#6C63FF", "#fff"], title: 'Número de Pedidos por Semana' %>
+</div>
+
+<div class ="dashboard_medium">
+  <%= pie_chart @products, title: 'Produtos Mais Vendidos' %>
+</div>
+
+<div class="table_container">
+  <%= column_chart @commands_per_day, colors: ["#DC143C", "#fff"], title: 'Número de Comandas Pagas por Dia' %>
+</div>
+
+<div class="table_container"></div>
