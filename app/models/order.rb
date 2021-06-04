@@ -14,11 +14,15 @@ class Order < ApplicationRecord
     (total - already_paid) if total 
   end
 
-  def already_paid
-    commands.paid.count > 0 ? commands.paid.map { |c| c.total }.inject(:+) : 0.0
+  def paid_total
+    commands.paid.sum { |c| c.total }
   end
 
-  def total 
-    commands.sum { |command| command.total }
+  def total
+    commands.sum { |c| c.total }
+  end
+
+  def already_paid?
+    total != 0 && paid_total == total
   end
 end
