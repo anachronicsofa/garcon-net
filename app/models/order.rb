@@ -23,6 +23,6 @@ class Order < ApplicationRecord
   end
 
   def already_paid?
-    total != 0 && paid_total == total
+    total > 0 && paid_total == total
   end
 end

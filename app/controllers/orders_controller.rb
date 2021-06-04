@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
   private
 
   def close_order
-    Order::CloseOrder.call(@order)
+    OrderServices::CloseOrder.call(@order)
   end
 
   def set_order

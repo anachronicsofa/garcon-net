@@ -1,4 +1,4 @@
-module Order
+module OrderServices
   class CloseOrder
     attr_accessor :order
     
