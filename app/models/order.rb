@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   enum status: [:open, :paid]
 
   def to_pay 
-    (total - already_paid) if total 
+    (total - paid_total) if total 
   end
 
   def paid_total

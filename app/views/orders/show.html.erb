@@ -56,7 +56,7 @@
   <div class="box">
    <ul class="order_details">
     <li class="order_details"><strong> Total: </strong><%= display_money(@order.total) %> </li>
-    <li class="order_details paid"><strong> Pago: </strong><%= display_money(@order.already_paid)%></li>
+    <li class="order_details paid"><strong> Pago: </strong><%= display_money(@order.paid_total)%></li>
     <li class="order_details not_paid"><strong> Falta: </strong><%= display_money(@order.to_pay) %> </li>   
    </ul> 
   </div>
