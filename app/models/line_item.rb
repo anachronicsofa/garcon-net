@@ -19,7 +19,8 @@ class LineItem < ApplicationRecord
     else 
       status = 'waiting'
     end
-    
+
+    product.update(stock: product.stock - quantity) if product.stock
     self.update(price: product.price, status: status)   
   end
 
