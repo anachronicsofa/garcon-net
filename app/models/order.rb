@@ -15,7 +15,7 @@ class Order < ApplicationRecord
   end
 
   def paid_total
-    commands.paid.sum { |c| c.total }
+    commands.paid.sum { |c| c.total } 
   end
 
   def total
@@ -23,6 +23,6 @@ class Order < ApplicationRecord
   end
 
   def already_paid?
-    total > 0 && paid_total == total
+    total != 0 && paid_total == total
   end
 end
