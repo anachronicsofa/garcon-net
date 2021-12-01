@@ -61,6 +61,6 @@ class CommandsController < ApplicationController
   end
 
   def command_params
-    params.require(:command).permit(:payment_status, :client_name, :client_cpf, :client_email, :total, :order_id)
+    params.require(:command).permit(:status, :client_name, :client_cpf, :client_email, :total, :order_id)
   end
 end
