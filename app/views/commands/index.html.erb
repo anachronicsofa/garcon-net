@@ -28,7 +28,7 @@
           </td>
           <td><%= link_to '✎', edit_command_path(command), class: 'btn btn--discrete' %>
           <%= link_to '🚧', command_path(command), class: 'btn btn--discrete' %>
-          <%= link_to '✘', command, method: :delete, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to '✘', command, method: :destroy, class: 'btn btn--delete', data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
