@@ -54,6 +54,14 @@ class CommandsController < ApplicationController
     end
   end
 
+  def create_from_mobile
+    order = Order.create(table_id: params[:table_id], status: 'open')
+    command = Command.create(client_name: params[:client_name], status: 'open', order_id: order.id)
+    params[:items].each { |item| command.line_items << LineItem.create(item.to_unsafe_hash) }
+
+    render json: command, status: :created
+  end
+
   private
 
   def set_command

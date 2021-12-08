@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   has_many :commands
+  has_many :line_items, through: :commands
   belongs_to :table
 
   scope :from_table, -> (table_id){ where(table_id: table_id) }

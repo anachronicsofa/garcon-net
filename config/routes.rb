@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'register', to: 'landing#register', as: :register
   post 'line_item/update_state', to: 'line_items#update_state'
   post 'command/confirm_payment', to: 'commands#confirm_payment'
+  post 'commands/create_from_mobile', to: 'commands#create_from_mobile'
+  post 'tables/items', to: 'api/tables#items'
 
   namespace :admin do
     resources :tables
