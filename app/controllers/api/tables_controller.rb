@@ -2,8 +2,8 @@ class Api::TablesController < ApplicationController
   respond_to :json
 
   def items
-    order = Order.where(status: 'open', table_id: params[:table_id]).first
-    if order
+    orders = Order.where(status: 'open', table_id: params[:table_id])
+    if orders.any?
       response = {
         order: orders.map do |order|
           {
