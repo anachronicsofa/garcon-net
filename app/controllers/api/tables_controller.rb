@@ -3,7 +3,7 @@ class Api::TablesController < ApplicationController
 
   def items
     order = Order.find_by(status: 'open', table_id: params[:table_id])
-    if orders.any?
+    if order
       response = {
         commands: order.commands.map do |command|
           {
