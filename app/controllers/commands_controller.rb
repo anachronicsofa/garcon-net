@@ -17,6 +17,7 @@ class CommandsController < ApplicationController
     @command.update(status: 'paid')
     respond_to do |format|
       format.js
+      format.json { render json: @command, status: :ok }
     end
   end
 
