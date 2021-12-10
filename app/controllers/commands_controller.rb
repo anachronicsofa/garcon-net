@@ -55,7 +55,12 @@ class CommandsController < ApplicationController
   end
 
   def create_from_mobile
-    order = Order.create(table_id: params[:table_id], status: 'open')
+    opened_order = Order.where(table_id: params[:table_id], status: 'open')
+    if opened_order.empty?
+      order = Order.create(table_id: params[:table_id], status: 'open')
+    else
+      order = opened_order.last
+    end
     command = Command.create(client_name: params[:client_name], status: 'open', order_id: order.id)
     params[:items].each { |item| command.line_items << LineItem.create(item.to_unsafe_hash) }
 
