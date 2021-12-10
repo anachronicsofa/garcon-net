@@ -8,9 +8,20 @@ class Api::TablesController < ApplicationController
         commands: order.commands.map do |command|
           {
             client_name: command.client_name,
+            command_id: command.id,
             total: command.total,
             status: command.status,
-            line_items: command.line_items
+            line_items: command.line_items.map do |li| 
+              {
+                id: li.id,
+                quantity: li.quantity,
+                status: li.status,
+                price: li.price,
+                command_id: li.command_id,
+                product: li.product,
+                time_to_prepare: li.time_to_prepare
+              }
+            end
           }
         end
       }
