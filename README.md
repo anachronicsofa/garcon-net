@@ -1,5 +1,8 @@
 # README
 
+Aplicação web para restaurantes/lanchonetes, com funcionalidade de aluguel de mesas, criação de cardápio, produtos, com estoque e precificação. Além de sistema de comandas com pagamento integral ou parcial de contas por aplicativo. 
+Possui implementação para integração com aplicação mobile. 
+
 ## Fast Development
 
 * Ruby version
